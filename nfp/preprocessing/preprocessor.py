@@ -1,16 +1,14 @@
 import logging
 import time
+import networkx as nx
 import numpy as np
-from tqdm.auto import tqdm
-
-from rdkit import Chem
-from rdkit.Chem import MolFromSmiles, MolToSmiles, AddHs
-
-from nfp.preprocessing import features, features_graph
-from nfp.preprocessing.features_graph import Tokenizer
 
 from ase.io import read, write
-import networkx as nx
+from rdkit import Chem
+from rdkit.Chem import MolFromSmiles, MolToSmiles, AddHs
+from nfp.preprocessing import features, features_graph
+from nfp.preprocessing.features_graph import Tokenizer
+from tqdm.auto import tqdm
 
 
 class AdsGraphPreprocessor(object):
