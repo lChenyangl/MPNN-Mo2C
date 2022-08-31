@@ -102,6 +102,24 @@ def bond_features_noBondLength(edge, **kwargs):
             edge['bondAtom2']]),
         ))
 
+def bond_features_noLatticeBondLength(edge, **kwargs):
+    return str((
+        edge['bondType'],
+        [edge['bondLength'] if edge['bondType']=='adsoprtion' else 0.],
+        sorted([
+            edge['bondAtom1'],
+            edge['bondAtom2']])
+        ))
+
+def bond_features_noAdsBondLength(edge, **kwargs):
+    return str((
+        edge['bondType'],
+        [edge['bondLength'] if edge['bondType']=='lattice' else 0.],
+        sorted([
+            edge['bondAtom1'],
+            edge['bondAtom2']])
+        ))
+
 def bond_features_v3(bond, **kwargs):
 
     return str((
